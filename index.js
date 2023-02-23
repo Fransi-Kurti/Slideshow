@@ -16,9 +16,16 @@ rightIconEl.addEventListener("click",()=>{
 
 
 
+leftIconEl.addEventListener("click", () =>{
+    currentImgEl--;
+    updateImage();
+})
+
 function updateImage(){
     if(currentImgEl > allImages.length){
         currentImgEl = 1;
+    } else if(currentImgEl < 1){
+        currentImgEl = allImages.length;
     }
     imgContainerEl.style.transform = `translateX(-${(currentImgEl - 1) * 500}px)`;
 }
